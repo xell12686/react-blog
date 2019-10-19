@@ -6,24 +6,27 @@ const app = express();
 
 app.use(bodyParser.json());
 
+
+
+//ROUTES
 app.get('/api/articles/:name', async (req, res) => {
     try {
         const articleName = req.params.name;
-    
-        const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true });
-        const db = client.db('react-blog');
         
-        const articleInfo = await db.collection('articles').findOne({ name: articleName })
-        res.status(200).json(articleInfo);
+        const client = await MongoClient.connect('mongodb://localhost:27017', { userNewUrlParser: true});
+        const db = client.db('react-blog');
     
+        const articlesInfo = await db.collection('articles').findOne({ name: articleName});
+        res.status(200).json(articlesInfo);
+        
         client.close();
     } catch (error) {
-        res.status(500).json({ message: 'Error connecting to db yo', error });
+        res.status(500).json({message: 'Error connecting to db YO!', error });
     }
 
 })
 
-//routes
+
 app.post('/api/articles/:name/upvote', (req, res) => {
     const articleName = req.params.name;
     articlesInfo[articleName].upvotes += 1;
