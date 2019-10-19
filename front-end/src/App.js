@@ -4,7 +4,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import ArticlesListPage from './pages/ArticlesListPage';
 import ArticlePage from './pages/ArticlePage';
@@ -20,7 +20,7 @@ class App extends Component {
           <NavBar />
           <div id="page-body">
             <Switch>
-              <Route path="/" component={HomePage} exact />
+              <Route path="/" component={Home} exact />
               <Route path="/about" component={AboutPage} />
               <Route path="/articles-list" component={ArticlesListPage} />
               <Route path="/article/:name" component={ArticlePage} />
