@@ -10,7 +10,10 @@ app.use(bodyParser.json());
 
 const withDB = async (operations, res) => {
     try {
-        const client = await MongoClient.connect('mongodb://localhost:27017', { userNewUrlParser: true });
+        const client = await MongoClient.connect('mongodb://localhost:27017', { 
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
         const db = client.db('react-blog');
         
         await operations(db);
