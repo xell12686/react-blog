@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomePage = () => (
     <>
-    <h1>Welcome to jDev React Deveopment Resource</h1>
+    <h1>Welcome to jDev React Deveopment Resource..</h1>
     <p>
         Welcome to my blog! Proin congue
         ligula id risus posuere, vel eleifend ex egestas. Sed in turpis leo. 
